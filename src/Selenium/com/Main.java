@@ -81,14 +81,14 @@ public class Main {
         WebElement updatesIframe = driver.findElement(By.xpath("//iframe[@src='/Ext/Comp/Ticker/Dhtml_Flash_Ticker/0,12114,L-3089-253-150,00.html?js=1']"));
         driver.switchTo().frame(updatesIframe);
 
-        //assigning variables to some update in update section
+        //Assigning variables to some update in update section
         String someUpdate1 = driver.findElement(By.xpath("//div[@id='bTicker']")).getAttribute("style");
         Thread.sleep(3000);
         String someUpdate2 = driver.findElement(By.xpath("//div[@id='bTicker']")).getAttribute("style");
 
         isUpdateMatch(someUpdate1,someUpdate2);
 
-        //hovering with the mouse on the updates section in order to stop it
+        //Hovering with the mouse on the updates section in order to stop it
         WebElement mouseHoverUpdate = driver.findElement(By.xpath("//div[@id='bTicker']//a[contains(@class,'tickerTextA')][contains(text(),'Cyprus court delays hearing for Brit in false rape')]"));
         action.moveToElement(mouseHoverUpdate).perform();
         someUpdate1 = driver.findElement(By.xpath("//div[@id='bTicker']")).getAttribute("style");
